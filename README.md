@@ -24,6 +24,18 @@ We have a small collection of algorithms, one for every day of the month. Scroll
   - [**December 8 - Cheating Probability**](#december-8---cheating-probability)
   - [**December 9 - One to One?**](#december-9---one-to-one)
   - [**December 10 - Count The Cookies**](#december-10---count-the-cookies)
+  - [**December 11 - Is This A Valid Email Address**](#december-11---is-this-a-valid-email-address)
+  - [**December 12 - Show JaSON the way**](#december-12---show-jason-the-way)
+  - [**December 13 - Toggling Switches**](#december-13---toggling-switches)
+  - [**December 14 - A Wordplay with Vowels and Consonants**](#december-14---a-wordplay-with-vowels-and-consonants)
+  - [**December 15 - Intruder Alert**](#december-15---intruder-alert)
+  - [**December 16 - Casino Royale**](#december-16---casino-royale)
+  - [**December 17 - Subway Surfer**](#december-17---subway-surfer)
+  - [**December 18 - Your Password is too WEAK**](#december-18---your-password-is-too-weak)
+  - [**December 19 - Periphery of a lake**](#december-19---periphery-of-a-lake)
+  - [**December 20 - 100 days of summer**](#december-20---100-days-of-summer)
+  - [**December 21 - Marching Partners**](#december-21---marching-partners)
+  - [**December 22 - Alternating Balls**](#december-22---alternating-balls)
   - [**FAQ**](#faq)
 
 
@@ -225,11 +237,11 @@ We have a small collection of algorithms, one for every day of the month. Scroll
 
 ### **December 8 - Cheating Probability**
   - **Problem**
-    - Given an RxC Matrix with its elements representing the branch being pursued by a student in the exam hall. Caluclate the probability of each student copying if a person from the same branch sits:
-    	-  In front = 0.3
-    	-  Behind = 0.2
-    	-  Sides = 0.2
-    	-  Diagonal = 0.1
+    - Given an RxC Matrix in which each element represents the Department of a student seated in that row and column in an examination hall, write a code to calculate the probability of each student copying if a person from the same department sits:
+    	-  In front of him = 0.3
+    	-  Behind him = 0.2
+    	-  To his left or right = 0.2
+    	-  In any of his 4 closest diagonals = 0.025
   - **Example**
     - **Input**
        ``` 
@@ -238,8 +250,8 @@ We have a small collection of algorithms, one for every day of the month. Scroll
         ```
     - **Output**
         ```
-        0.0 0.3 0.2
-        0.3 0.5 0.3
+        0.0 0.225 0.2
+        0.225 0.5 0.3
         ```
     - <img src="https://img.buzzfeed.com/buzzfeed-static/static/2016-09/26/6/asset/buzzfeed-prod-web11/anigif_sub-buzz-5611-1474885869-2.gif" height=250/>
   - **Resources**
@@ -297,7 +309,315 @@ We have a small collection of algorithms, one for every day of the month. Scroll
     - [Div Mod in C & C++](https://www.cprogramming.com/tutorial/modulus.html)
     - [Div Mod in Java](http://www.cs.ukzn.ac.za/~hughm/java/intro/week2/21.html)
     
+
+### **December 11 - Is This A Valid Email Address**
+  - **Problem**
+    - While signing up for a website, you must have seen that when an invalid email address is entered, you get a warning. This is because the website validates the given email address according to some specification of a valid email address (check the resources section to know the format of a valid email address). 
+    - Now, for today's challenge implement your own email address verification algorithm.
+    - For the sake of simplicity, assume that a valid email address has the following format:
+      - `local_part@domain`
+      - The `local_part` should contain only alphabets, numbers and the characters: `_`, `.`, `-`.
+      - The `domain` should contain only alphabets followed by `.com`
+  - **Example**
+      ```
+      // Valid email addresses
+      john-doe31@gmail.com
+      jane.austen_691@dnarifle.com
+      ```
+  - **Optional Problem**
+    - Implement an algorithm to verify an email address based on the complete syntax specification (given in the resources section).
+  - **Resources**
+    - [Complete Syntax Specification of Email Addresses](https://en.wikipedia.org/wiki/Email_address#Syntax)
+  - <details><summary><b>Still stuck?</b></summary>
+      <ul>
+          <li>Use Regular Expressions to verify the format of the email.</li>
+          <li><a href="http://www.cplusplus.com/reference/regex/">Regular Expressions in C++</a></li>
+          <li><a href="https://www.tutorialspoint.com/python/python_reg_expressions.htm">Regular Expressions in Python</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Regular Expressions in JavaScript</a></li>
+          <li><a href="https://www.javatpoint.com/java-regex">Regular Expressions in Java</a></li>
+      </ul>
+    </details>
+
+
+### **December 12 - Show JaSON the way**
+  - **Problem** 
+  	- Jason is stranded in a desert.His phone's battery is going to die out and all he has left is a compass.
+    - Parse the JaSON.json(in src/res) file and get the latitude and longitude values of the current and destination location.
+    - Also find the distance between those two locations (refer resources for the link)
+    - Return a Directions json file with your personalized message, distance and some direction.
+  - **Example**
+       - **JaSON.json(src/res):**
+       ```json
+       {
+  		"markers": 
+		[
+			{
+				"name": "start",
+				"location": [25.1212, 55.1535],
+			},
+			{
+				"name": "destination",
+				"location": [25.2285, 55.3273]
+			}
+  		]
+       }
+       ```
+       - **Sampl- Inpute Output:**
+       ```json
+       {
+        "directions": 
+		[
+			  {
+			    "message": "Meet at the destination point",
+			    "distance": 21.17,
+			    "direction": "N"
+			  }
+        ]
+       }
+       ```
+  - **Resources**
+    - [Java JSON parsing](https://www.mkyong.com/java/json-simple-example-read-and-write-json/)
+    - [Python JSON parsing](https://docs.python.org/3/library/json.html)
+    - [C++ JSON parsing](https://nlohmann.github.io/json/)
+    - [Calculate distance](https://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates)
+  - **Note**  
+    JSON format can differ and values like message and direction are totally upto you.
+
+
+### **December 13 - Toggling Switches**
+  - **Problem**  
+    - There are `n` switches labeled from 1 to `n`,to turn on/off `n` bulbs.
+    - At start all the bulbs are switched off
+    - At first round, every bulb is turned `on`
+    - At second round, every second switch is turned `off`
+    - At third round, every third switch is toggled on/off (on->off and off->on)
+    - This goes on and during nth round, every nth switch is toggled on/off.
+    - The task is to write `O(n)` and constant time functions to find how many switches are in the `on` state (two separate functions).
+    - [optional] Find the switch nos. that are in the 'on' state after n such iterations.
+
+  - **Example**
+  ```
+  Enter no of switches: 5
+       
+  Iteration 0: 1->off  2->off  3->off  4->off  5->off
+  Iteration 1: 1->on   2->on   3->on   4->on   5->on
+  Iteration 2: 1->on   2->off  3->on   4->off  5->on
+  Iteration 3: 1->on   2->off  3->off  4->off  5->on
+  Iteration 4: 1->on   2->off  3->off  4->on   5->on
+  Iteration 5: 1->on   2->off  3->off  4->on   5->off
+  
+  No of switches in the 'on' state at the end: 2
+  ```
+  - **Resources**
+    - [Java math module](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
+    - [Python math module](https://docs.python.org/3/library/math.html)
+    - [C++ math module](http://www.cplusplus.com/reference/cmath/)
+
+
+### **December 14 - A Wordplay with Vowels and Consonants**
+  - **Problem**  
+    - There are two players A and B. Initially, they are given the same string ```s```. 
+    - They have to make substrings with letters in 's'.
+    - A makes substrings starting with a vowel(a,e,i,o,u) and B makes substrings starting with consonants.
+    - For each occurence of their substring in 's', the players get 1 point.
+    - The task is to find who has the maximum score and what's the winner's score for a string 's'.
+  - **Example**
+       ```
+       String: london
+       A's score:7 (o,on,ond,ondo,ondon)
+       B's score:14 (l,lo,lon,lond,londo,london,n,nd,ndo,ndon,d,do,don) 
+       The winner is B with 14 points
+       ```
+   - **Format**
+      ```
+      Enter string: monkey
+      The winner is B with 14 pts
+      ```
+  - **Resources**
+    - [String in c++](https://www.w3schools.com/cpp/cpp_strings.asp)
+    - [Strings in python](https://www.w3schools.com/python/python_strings.asp)
+    - [Strings in java](https://www.javatpoint.com/java-string)
+
+
+### **December 15 - Intruder Alert**
+  - **Problem**  
+    - Rick Sanchez just discovered that someone from another planet has been intruding into his private planet use its resources.
+    - In order to lure that person in to humiliate him, Rick decides to send a dish as a gift. This dish has been cooked with a balance between its main ingredients: Animal A and Liquid B.
+    - If for every 1g of A 1ml of B has to be added, write a code that uses **Backtracking** to print the number of ways the ingredients can be added when the quantity of A needed is provided.
+  - **Example**
+    ```
+    Quantity of A(in grams): 2
+    Combinations: [AABB, ABAB]
+    Quantity of A(in grams): 3
+    Combinations: [AAABBB, AABABB,AABBAB,ABAABB,ABABAB]
+    ```
+  - **Resources**
+    - [Backtracking](https://www.javatpoint.com/backtracking-introduction)
     
+
+### **December 16 - Casino Royale**
+  - **Problem**  
+    - In poker, players form sets of five playing cards, called hands, according to the rules of the game. Each hand has a rank, which is compared against the ranks of other hands of all those in the game and the highest hand wins all the money that everybody puts in.
+    - A poker hand is specified as a space separated list of five playing cards:
+    - Each input card has two characters indicating face and suit. For example: `2d` (two of diamonds).
+    	- Faces are: `a`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `j`, `q`, `k`
+		- Suits are: `h` :hearts: (hearts), `d` :diamonds: (diamonds), `c` :clubs: (clubs), and `s` :spades: (spades)
+    - Create a program to parse a single five card poker hand and specify the poker hand ranking and produce one of the following outputs.
+    ```
+     straight-flush
+	 four-of-a-kind
+	 full-house
+	 flush
+	 straight
+	 three-of-a-kind
+	 two-pair
+	 one-pair
+	 high-card
+	 invalid
+    ```
+  - **Example**
+    ```
+     2h  2h  2h  kc  qd:  three-of-a-kind
+     2h  5h  7d  8c  9s:  high-card
+     ah  2d  3c  4c  5d:  straight
+     2h  3h  2d  3c  3d:  full-house
+     2h  7h  2d  3c  3d:  two-pair
+     2h  7h  7d  7c  7s:  four-of-a-kind 
+     10h jh  qh  kh  ah:  straight-flush
+     4h  4s  ks  5d  10s: one-pair
+     qc  10c 7c  6c  4c:  flush
+    ```
+  	<img src="/src/assets/casino.gif" height=250/>
+  
+  - **Resources**
+    - [Poker hand ranking](https://en.wikipedia.org/wiki/List_of_poker_hands#Hand-ranking_categories)
+    - [Arrays](https://makecode.microbit.org/types/array)
+    - [Sorting](https://www.geeksforgeeks.org/sorting-algorithms)
+    
+### **December 17 - Subway Surfer**
+  - **Problem**
+    - Many metro train systems across the world have multiple lines. These lines often meet each other at few stations called interchanges. Commuters often change lines at interchanges based on their destination.   
+    
+    	<img src="/src/assets/December-17 Subway Surfers.png" height=250/>     
+    - In the above diagram we can observe that if we want to travel between Greenwich station and the Airport we have to travel for 10 stations in the red line : `GREENWICH -> SUNTECH  -> MARINA -> CENTRAL -> CITY HALL -> BAY -> MUSEUM -> RIVERFRONT -> DOWNTOWN -> AIRPORT`
+    - However if the passengers switch trains to the blue line in CENTRAL station they can save time and reach their destination faster: `GREENWICH -> SUNTECH ->MARINA -> CENTRAL -> ZOO -> ESTATE ->AIRPORT`
+    - Write a program that accepts two ordered arrays of railway lines and calculates the fastest route possible between two stations.
+  - **Example**
+      ```
+      Enter Train Lines, Start and Endpoint:
+      Line 1: Park, Central, Beach, Mylapore, Kilpauk
+      Line 2: Central, T.Nagar, Washerampet, MKB Nagar.
+      Start: Park
+      End: T.Nagar
+      ```
+      ```
+      Fastest Path: Park ->Central -> T.nagar
+      ```
+  - **Resources**
+    - [Arrays in C++](http://www.cplusplus.com/doc/tutorial/arrays/)
+    - [Arrays in Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+    - [Arrays in Python](https://www.w3schools.com/python/python_lists.asp)
+    
+### **December 18 - Your Password is too WEAK**
+  - **Problem**
+    - Brute Force Attack is the simplest password cracking method. This attack simply tries to use every possible ASCII printable characters (character code 32-126) combination as a password. Brute Forcing takes time but the chances of getting it right is certain.
+    - The problem is to calculate the time taken to find the password given that you know the length of the password string using Brute Force and Multithreading. 
+    **Note:** Brute Forcing doesn't work in real life.
+  - **Example**
+  ```
+  Enter Password: T!Kk@
+  Time Taken: 6723.45 seconds
+  ```
+  - **Resources**
+    - [Multithreading in C++](https://www.geeksforgeeks.org/multithreading-in-cpp/)
+    - [Multithreading in Java](https://www.geeksforgeeks.org/multithreading-in-java/)
+    
+### **December 19 - Periphery of a lake**
+  - **Problem**
+    - Reshwin wants to experience the scenic view of the kolleru lake from the periphery of the lake.
+    - Given a set of random points (which also contains the points which lie in the periphery of the lake), Reshwin has to find the points which lie in the periphery of a lake to traverse the outer limits of the lake.
+    	<img src="/src/assets/Convexhull.jpg" height=250/> 
+    - Develop an algorithm to help Reshwin
+    
+  - **Example**
+  ```
+  {{0, 3}, {2, 2}, {1, 1}, {2, 1}, {1, 2},{3, 0}, {0, 0}, {3, 3}}
+  ```
+  ```
+  The outer limits are - {{0, 3}, {0, 0}, {3, 0}, {3, 3}}
+  ```
+  - **Resources**
+    - [Convex Hull](https://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/)
+    
+### **December 20 - 100 days of summer**
+  - **Problem**
+    - Nitya wants to visit a number of cities in her summer vacation.
+    -  Given a set of cities and distance between every pair of cities, the problem is to find the shortest possible route that visits every city exactly once and returns to the starting point.
+    	<img src="/src/assets/tsp.jpg" height=250/> 
+    -  The input is in the form of a matrix where the indices represent the city number and the value in the matrix represents the distance between the two cities
+    - The output is the least distance
+  - **Example**  
+ 	For four cities A,B,C,D the input will be in the following format (**Note**: The matrix is symmetric since the distance from A->B is the distance from B->A)
+ 	- Input
+ 	```
+		A	B	C	D
+	 A	0km	40km	10km	30km			
+
+	 B	40km	0km	20km	10km	
+
+	 C	10km	20km	0km	50km		
+
+	 D	30km	10km	50km	0km
+  	```
+  	- Output 
+	```
+	The shortest distance is 70km
+	```
+	
+  - **Resources**
+    - [Travelling Salesman Problem](https://www.tutorialspoint.com/Travelling-Salesman-Problem)
+  
+### **December 21 - Marching Partners**
+  - **Problem**
+    - Nikhil wants to organise a procession with his students.
+    - In this procession, two students will walk side-by-side in each row.
+    - Nikhil expects that the height difference of the two students who walk in each row should not exceed a certain threshold. That is, two students can be paired as long as their height difference does not exceed `d`.
+    - If there are `n` students in the class in which the `i`th student is `H[i]` units tall, pair the maximum number of students corresponding to the above condition.
+    - _Note_: A student cannot be part of more than one pair.
+    - Implement a function `marching_partners(n, H, d)` that prints the maximum number of pairs that can be formed. 
+  - **Example**  
+ 	```bash
+	> marching_partners(5, [147,149,149,155,150], 2)
+	  2
+  	```	
+  - **Explanation**
+    - The 5 students have heights 147, 149, 149, 155 and 150 respectively. The maximum allowed difference in the heights of two students forming a pair is at most 2. It is clear that the 4th student (height 155) cannot be paired with any other student. The remaining 4 students can be paired as (1st and 3rd) and (2nd and 5th) to form 2 pairs.
+  - **Resources**
+    - [Greedy Algorithms](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/tutorial/)
+    
+### **December 22 - Alternating Balls**
+  - **Problem**
+    - There are `N` balls arranged in a row. They are either red or blue in colour.
+    - A sub-row is said to be alternating if any two adjacent balls are of different colours. 
+    - For each ball located at position `x` (from 1 to `N`), compute the length of the longest alternating sub-row that starts at `x`. 
+    - Implement a function `alt_balls(N,arr)` that outputs the length of the longest alternating sub-row for each `x` from 1 to N.
+  - **Example** 
+   	```bash
+	> alt_balls(4, [B,B,B,B])
+	  1 1 1 1
+	> alt_balls(4, [B,R,B,R])
+	  4 3 2 1
+	> alt_balls(6, [B,B,B,R,B,B])
+	  1 1 3 2 1 1 
+ 	```	
+  - **Explanation**
+    - `Case 1`: No two balls have different colours, so any alternating sub-row may only consist of a single ball.
+    - `Case 2`: Every sub-row is alternating.
+    - `Case 3`: The only alternating sub-row of length 3 is from position 3 to 5.
+  - **Resources**
+    - [Dynamic Programming](https://www.topcoder.com/community/competitive-programming/tutorials/dynamic-programming-from-novice-to-advanced/)  	
+
+
 ## Maintainers
 - [K-Kraken](https://github.com/K-Kraken)
 - [jyuvaraj03](https://github.com/jyuvaraj03)
@@ -307,6 +627,9 @@ We have a small collection of algorithms, one for every day of the month. Scroll
 - [ajaykrishnan23](https://github.com/ajaykrishnan23)
 - [dhirajv2000](https://github.com/dhirajv2000)
 - [dhivya141](https://github.com/dhivya141)
+- [Humaidabdullah](https://github.com/Humaidabdullah)
+- [Vignesh040](https://github.com/Vignesh0404)
+
 
 
 FAQ:
